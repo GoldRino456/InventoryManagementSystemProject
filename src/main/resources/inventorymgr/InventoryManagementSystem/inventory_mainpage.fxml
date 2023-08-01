@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="427.0" prefWidth="943.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventorymgr.InventoryManagementSystem.MainpageController">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="427.0" prefWidth="985.0">
+            <children>
+                <Pane layoutX="14.0" layoutY="76.0" prefHeight="275.0" prefWidth="439.0" style="-fx-border-color: black; -fx-border-radius: 15px;" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="490.0" AnchorPane.topAnchor="76.0">
+                    <children>
+                        <Text layoutX="21.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parts" textAlignment="CENTER" wrappingWidth="61.341796875">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Text>
+                        <TableView fx:id="partsTable" layoutX="18.0" layoutY="53.0" prefHeight="173.0" prefWidth="403.0">
+                            <columns>
+                                <TableColumn fx:id="partsTable_id" prefWidth="65.0" text="Part ID" />
+                                <TableColumn fx:id="partsTable_name" prefWidth="105.0" text="Part Name" />
+                                <TableColumn fx:id="partsTable_inv" prefWidth="107.0" text="Inventory Level" />
+                                <TableColumn fx:id="partsTable_price" minWidth="8.0" prefWidth="125.0" text="Price/ Cost per Unit" />
+                            </columns>
+                        </TableView>
+                        <TextField fx:id="partsSearchBar" layoutX="234.0" layoutY="15.0" onAction="#partsSearchStarted" prefHeight="25.0" prefWidth="170.0" promptText="Search by Part ID or Name" />
+                        <Button fx:id="parts_addButton" layoutX="234.0" layoutY="236.0" mnemonicParsing="false" onAction="#onPartAddButtonClick" text="Add" />
+                        <Button fx:id="parts_modifyButton" layoutX="286.0" layoutY="236.0" mnemonicParsing="false" onAction="#onPartModifyButtonClick" text="Modify" />
+                        <Button fx:id="parts_deleteButton" layoutX="353.0" layoutY="236.0" mnemonicParsing="false" onAction="#onPartDeleteButtonClick" text="Delete" />
+                    </children>
+                </Pane>
+                <Text layoutX="14.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory Management System" textAlignment="CENTER" wrappingWidth="250.341796875">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Text>
+                <Pane layoutX="490.0" layoutY="76.0" prefHeight="275.0" prefWidth="439.0" style="-fx-border-color: black; -fx-border-radius: 15px;">
+                    <children>
+                        <Text layoutX="21.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Products" textAlignment="CENTER" wrappingWidth="61.341796875">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Text>
+                        <TableView fx:id="productsTable" layoutX="18.0" layoutY="53.0" prefHeight="173.0" prefWidth="403.0">
+                            <columns>
+                                <TableColumn fx:id="productsTable_id" prefWidth="72.0" text="Product ID" />
+                                <TableColumn fx:id="productsTable_name" prefWidth="98.0" text="Product Name" />
+                                <TableColumn fx:id="productsTable_inv" prefWidth="107.0" text="Inventory Level" />
+                                <TableColumn fx:id="productsTable_price" minWidth="8.0" prefWidth="125.0" text="Price/ Cost per Unit" />
+                            </columns>
+                        </TableView>
+                        <TextField fx:id="productsSearchBar" layoutX="234.0" layoutY="15.0" onAction="#productsSearchStarted" prefHeight="25.0" prefWidth="170.0" promptText="Search by Product ID or Name" />
+                        <Button fx:id="products_addButton" layoutX="234.0" layoutY="236.0" mnemonicParsing="false" onAction="#onProductAddButtonClick" text="Add" />
+                        <Button fx:id="products_modifyButton" layoutX="286.0" layoutY="236.0" mnemonicParsing="false" onAction="#onProductModifyButtonClick" text="Modify" />
+                        <Button fx:id="products_deleteButton" layoutX="353.0" layoutY="236.0" mnemonicParsing="false" onAction="#onProductDeleteButtonClick" text="Delete" />
+                    </children>
+                </Pane>
+            <Button fx:id="exit_Button" layoutX="854.0" layoutY="369.0" mnemonicParsing="false" onAction="#onExitButtonClick" text="Exit" />
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
